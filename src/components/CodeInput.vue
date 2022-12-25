@@ -231,6 +231,8 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+@import url(https://fonts.bunny.net/css?family=alatsi:400);
+
 .code-input-container {
   position: relative;
   display: flex;
