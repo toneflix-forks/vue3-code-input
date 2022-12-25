@@ -1,9 +1,9 @@
 {
-  "name": "vue3-verification-code-input",
+  "name": "vue3-code-input",
   "version": "0.1.0",
-  "description": "🎉A verification code input for vue 3",
-  "repository": "https://github.com/zlayine/vue3-verification-code-input",
-  "author": "Zouheir <zouheirlen@gmail.com> @zlayine",
+  "description": "🎉A verification code input for vue 3 forked from the original with a lot of more improvement",
+  "repository": "https://github.com/toneflix/vue3-code-input",
+  "author": "3m1n3nc3 <mygames.ng@gmail.com> @toneflix",
   "license": "MIT",
   "engines": {
     "node": ">=8",
