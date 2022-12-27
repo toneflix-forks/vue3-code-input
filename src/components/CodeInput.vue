@@ -25,9 +25,10 @@
             }
           "
           v-on:input="onValueChange"
-          v-on:focus="onFocus"
+          v-on:focus="(e) => onFocus(e, index)"
           v-on:keydown="onKeyDown"
           :required="required"
+          :readonly="index > 0 && values[index - 1] === ''"
           :disabled="disabled"
           maxlength="1"
         />
@@ -106,8 +107,13 @@ export default defineComponent({
       values.value = vals;
     };
 
-    const onFocus = (e) => {
-      e.target.select(e);
+    const onFocus = (e, prevIndex) => {
+      const prev = inputs.value[prevIndex];
+      if (prev && prev.value === "") {
+        prev.focus();
+      } else {
+        e.target.select(e);
+      }
     };
 
     const onValueChange = (e) => {
