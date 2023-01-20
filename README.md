@@ -9,12 +9,12 @@
 
 ## Demo
 
-![Vue 3 Verification Code Demo](https://github.com/toneflix-forks/vue3-code-input/blob/master/public/demo_image.png?raw=true)
+![Vue 3 Code Input Demo](https://github.com/toneflix-forks/vue3-code-input/blob/master/public/demo_image.png?raw=true)
 
 ## Install
 
 ```bash
-npm install --save vue3-verification-code-input
+npm install --save @toneflix-code/vue3-code-input
 ```
 
 ## Usage
