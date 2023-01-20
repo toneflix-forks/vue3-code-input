@@ -2,7 +2,7 @@
   "name": "@toneflix-code/vue3-code-input",
   "version": "1.0.0",
   "description": "🎉A verification code input for vue 3 forked from the original with a lot of more improvement",
-  "repository": "https://github.com/toneflix/vue3-code-input",
+  "repository": "https://github.com/toneflix-forks/vue3-code-input.git",
   "author": "3m1n3nc3 <mygames.ng@gmail.com> @toneflix",
   "license": "MIT",
   "engines": {
@@ -20,9 +20,6 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
-  },
-  "repository": {
-    "https://github.com/toneflix-forks/vue3-code-input.git"
   },
   "devDependencies": {
     "@vue/compiler-sfc": "^3.0.0",
