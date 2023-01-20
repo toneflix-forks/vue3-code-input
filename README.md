@@ -42,15 +42,18 @@ const completed = ref(false);
 
 ## PropTypes
 
-|     Key     |  Type  |          Desc           |
-| :---------: | :----: | :---------------------: |
-|   fields    | number | The count of characters |
-|  disabled   |  bool  |   Disable the inputs    |
-|  required   |  bool  |   require the inputs    |
-| fieldWidth  | number |       input width       |
-| fieldHeight | number |      input height       |
-|    title    | string |    code input title     |
-|  className  | string |       class name        |
+|        Key       |  Type  |              Desc               |
+| :--------------: | :----: | :-----------------------------: |
+|      borders     | string | Borders to show (Default: btlr) |
+|      fields      | number |    The count of characters      |
+|     disabled     |  bool  |      Disable the inputs         |
+|     required     |  bool  |      require the inputs         |
+|    fieldWidth    | number |          input width            |
+|    fieldHeight   | number |         input height            |
+|       title      | string |       code input title          |
+|     className    | string |          class name             |
+|   primaryColor   | string |   The main component color      |
+|  secondaryColor  | string | The alternate component color   |
 
 ## EmitTypes
 
