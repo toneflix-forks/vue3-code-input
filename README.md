@@ -3,13 +3,13 @@
 > 🎉A verification code input for vue 3
 > This is a fork of zlayine's vue3-verification-code-input with a lot more improvements on the way and is currently maintained.
 
-[![NPM](https://img.shields.io/npm/v/vue3-verification-code-input.svg)](https://www.npmjs.com/package/vue3-verification-code-input) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v//@toneflix-code/vue3-code-input.svg)](https://www.npmjs.com/package//@toneflix-code/vue3-code-input) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-[![NPM](https://nodei.co/npm/vue3-verification-code-input.png)](https://nodei.co/npm/vue3-verification-code-input/)
+[![NPM](https://nodei.co/npm//@toneflix-code/vue3-code-input.png)](https://nodei.co/npm/@toneflix-code/vue3-code-input)
 
 ## Demo
 
-![Vue 3 Verification Code Demo](https://github.com/zlayine/vue3-verification-code-input/blob/master/public/demo_image.png?raw=true)
+![Vue 3 Verification Code Demo](https://github.com/toneflix-forks/vue3-code-input/blob/master/public/demo_image.png?raw=true)
 
 ## Install
 
