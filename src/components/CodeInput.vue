@@ -1,15 +1,25 @@
 <template>
   <div
-    v-bind:class="{
+    :class="{
       'code-input-container': true,
       [className]: !!className,
     }"
+    :style="`--ci-color-secondary: ${secondaryColor}; --ci-color-primary: ${primaryColor};`"
   >
-    <div class="code-input font-alatsi">
+    <div class="code-input font-alatsi" :class="parseBorders()">
       <p class="title" v-if="title">{{ title }}</p>
       <template v-for="(v, index) in values" :key="index">
         <input
-          class="text-center transition-all border-none rounded-lg outline-none w-14 h-14 focus:outline-none focus:ring-0"
+          class="
+            text-center
+            transition-all
+            border-none
+            rounded-lg
+            outline-none
+            w-14
+            h-14
+            focus:outline-none focus:ring-0
+          "
           type="number"
           pattern="[0-9]"
           :style="{
@@ -45,6 +55,18 @@ export default defineComponent({
   emits: ["change", "complete", "update:modelValue"],
   props: {
     className: String,
+    primaryColor: {
+      type: String,
+      default: "#3880ff",
+    },
+    secondaryColor: {
+      type: String,
+      default: "#3dc2ff",
+    },
+    borders: {
+      type: String,
+      default: "btlr",
+    },
     fields: {
       type: Number,
       default: 3,
@@ -231,6 +253,20 @@ export default defineComponent({
       onKeyDown,
       onValueChange,
       autoFocusIndex,
+      parseBorders() {
+        const actualBorders = {
+          b: "border-b",
+          t: "border-t",
+          l: "border-l",
+          r: "border-r",
+        };
+        // Split each the letters in the string
+        const letters = props.borders.split("");
+        // Map the letters to the actual borders
+        const mapped = letters.map((letter) => actualBorders[letter]);
+        // Join the mapped borders with a space
+        return mapped.join(" ");
+      },
     };
   },
 });
@@ -238,6 +274,45 @@ export default defineComponent({
 
 <style scoped lang="scss">
 @import url(https://fonts.bunny.net/css?family=alatsi:400);
+
+.code-input-container {
+  --ci-color-primary: #3880ff;
+  --ci-color-secondary: #3dc2ff;
+}
+
+// Tailwind text-center
+.text-center {
+  text-align: center;
+}
+// Tailwind transition-all
+.transition-all {
+  transition-property: all;
+}
+// Tailwind border-none
+.border-none {
+  border-width: 0;
+}
+// Tailwind rounded-lg
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+// Tailwind outline-none
+.outline-none {
+  outline: 0;
+}
+// Tailwind w-14
+.w-14 {
+  width: 3.5rem;
+}
+// Tailwind h-14
+.h-14 {
+  height: 3.5rem;
+}
+// Tailwind focus:outline-none focus:ring-0
+.focus\:outline-none.focus\:ring-0:focus {
+  outline: 0;
+  box-shadow: none;
+}
 
 .code-input-container {
   position: relative;
@@ -251,23 +326,53 @@ export default defineComponent({
   flex-direction: row;
   justify-content: center;
   gap: 10px;
-}
-.code-input > input {
-  border-bottom: solid 2px var(--ion-color-secondary);
-  font-family: "Alatsi", sans-serif;
-  font-size: 30px;
-  border-radius: 0;
-  text-align: center;
-  transition: 0.2s all ease-in-out;
-  color: var(--ion-color-secondary);
-  box-sizing: border-box;
-  appearance: initial;
-  -webkit-appearance: initial;
-}
-.code-input > input:focus {
-  outline: none;
-  border-bottom: 2px solid var(--ion-color-primary);
-  caret-color: #006fff;
+  & > input {
+    font-family: "Alatsi", sans-serif;
+    font-size: 30px;
+    border-radius: 0;
+    text-align: center;
+    transition: 0.2s all ease-in-out;
+    color: var(--ci-color-primary);
+    box-sizing: border-box;
+    appearance: initial;
+    -webkit-appearance: initial;
+    &:focus {
+      outline: none;
+      caret-color: var(--ci-color-secondary);
+    }
+  }
+  &.border-b {
+    & > input {
+      border-bottom: solid 2px var(--ci-color-primary);
+      &:focus {
+        border-bottom: 2px solid var(--ci-color-secondary);
+      }
+    }
+  }
+  &.border-t {
+    & > input {
+      border-top: solid 2px var(--ci-color-primary);
+      &:focus {
+        border-top: 2px solid var(--ci-color-secondary);
+      }
+    }
+  }
+  &.border-l {
+    & > input {
+      border-left: solid 2px var(--ci-color-primary);
+      &:focus {
+        border-left: 2px solid var(--ci-color-secondary);
+      }
+    }
+  }
+  &.border-r {
+    & > input {
+      border-right: solid 2px var(--ci-color-primary);
+      &:focus {
+        border-right: 2px solid var(--ci-color-secondary);
+      }
+    }
+  }
 }
 .title {
   margin: 0;
