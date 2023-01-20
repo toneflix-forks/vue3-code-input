@@ -35,7 +35,7 @@ npm install --save vue3-verification-code-input
 </template>
 
 <script setup>
-import CodeInput from "./components/CodeInput.vue";
+import CodeInput from "vue3-code-input";
 import { ref } from "vue";
 
 const completed = ref(false);
