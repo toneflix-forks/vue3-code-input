@@ -1,7 +1,7 @@
-# vue3-verification-code-input
+# Vue 3 Code Input
 
 > 🎉A verification code input for vue 3
-> This is a fork of zlayine's vue3-verification-code-input with a lot more improvements on the way and is currently maintained.
+> This is a fork of zlayine's vue3-verification-code-input with a lot more improvements on the way and active maintainance.
 
 [![NPM](https://img.shields.io/npm/v//@toneflix-code/vue3-code-input.svg)](https://www.npmjs.com/package//@toneflix-code/vue3-code-input) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
