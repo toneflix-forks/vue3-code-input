@@ -65,4 +65,4 @@ const completed = ref(false);
 
 ## License
 
-MIT © [zlayine](https://github.com/zlayine)
+MIT
