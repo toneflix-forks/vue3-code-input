@@ -27,10 +27,11 @@ npm install --save vue3-verification-code-input
     :fieldWidth="56"
     :fieldHeight="56"
     :required="true"
+    v-model="code"
   />
   <button class="btn" :disabled="!completed">
-		Continue
-	</button>
+    Continue
+  </button>
 </template>
 
 <script setup>
@@ -38,6 +39,7 @@ import CodeInput from "./components/CodeInput.vue";
 import { ref } from "vue";
 
 const completed = ref(false);
+const code = ref('');
 </script>
 ```
 
