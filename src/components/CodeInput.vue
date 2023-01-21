@@ -285,7 +285,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@import url(https://fonts.bunny.net/css?family=alatsi:400);
+@import url(https://fonts.bunny.net/css?family=anton:400);
 
 .code-input-container {
   --ci-color-primary: #3880ff;
@@ -339,7 +339,7 @@ export default defineComponent({
   justify-content: center;
   gap: 10px;
   & > input {
-    font-family: "Alatsi", sans-serif;
+    font-family: "Anton", sans-serif;
     font-size: 30px;
     border-radius: 0;
     text-align: center;
