@@ -44,6 +44,10 @@
         />
       </template>
     </div>
+    <!-- Show error message below here -->
+    <div class="error-message text-center" v-if="hasError && errorMessage">
+      {{ errorMessage }}
+    </div>
   </div>
 </template>
 
@@ -86,6 +90,14 @@ export default defineComponent({
     required: {
       type: Boolean,
       default: true,
+    },
+    hasError: {
+      type: Boolean,
+      default: true,
+    },
+    errorMessage: {
+      type: String,
+      default: "",
     },
     modelValue: {
       type: String,
@@ -319,7 +331,7 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  gap: 5px;
 }
 .code-input {
   display: flex;
@@ -378,5 +390,22 @@ export default defineComponent({
   margin: 0;
   height: 20px;
   padding-bottom: 10px;
+}
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin: 0;
+  padding-top: 5px;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 </style>
