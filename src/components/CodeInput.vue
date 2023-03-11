@@ -38,7 +38,7 @@
           v-on:focus="(e) => onFocus(e, index)"
           v-on:keydown="onKeyDown"
           :required="required"
-          :readonly="index > 0 && values[index - 1] === ''"
+          :readonly="index-1 > 0 && values[index - 1] === ''"
           :disabled="disabled"
           maxlength="1"
         />
