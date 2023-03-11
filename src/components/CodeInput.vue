@@ -8,7 +8,7 @@
   >
     <div class="code-input font-alatsi" :class="parseBorders()">
       <p class="title" v-if="title">{{ title }}</p>
-      <template v-for="(v, index) in values" :key="index">
+      <template v-for="(v, index) in values">
         <input
           class="
             text-center
@@ -29,6 +29,7 @@
           :autoFocus="autoFocus && index === autoFocusIndex"
           :data-id="index"
           :value="v"
+          :key="index"
           :ref="
             (el) => {
               if (el) inputs[index + 1] = el;
@@ -38,9 +39,10 @@
           v-on:focus="(e) => onFocus(e, index)"
           v-on:keydown="onKeyDown"
           :required="required"
-          :readonly="index-1 > 0 && values[index - 1] === ''"
+          :readonly="index > 0 && values[index - 1] === ''"
           :disabled="disabled"
           maxlength="1"
+          v-if="index > -1"
         />
       </template>
     </div>
@@ -407,5 +409,6 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 </style>
